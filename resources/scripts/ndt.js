@@ -102,7 +102,7 @@ NDTjs.prototype.checkBrowserSupport = function () {
  */
 NDTjs.prototype.findNdtServer = function () {
   var mlabNsRequest = new XMLHttpRequest(),
-    mlabNsUrl = 'http://mlab-ns.appspot.com/ndt?format=json',
+    mlabNsUrl = 'https://mlab-ns.appspot.com/ndt?format=json',
     that = this;
 
   mlabNsRequest.onreadystatechange = function () {
