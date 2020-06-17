@@ -267,7 +267,7 @@ InternetHealthTest.prototype.findLocation = function (allServers) {
 
 InternetHealthTest.prototype.findLocalServers = function (allServers) {
   var mlabNsRequest = new XMLHttpRequest(),
-    mlabNsUrl = 'http://mlab-ns.appspot.com/ndt?format=json&policy=geo',
+    mlabNsUrl = 'https://mlab-ns.appspot.com/ndt?format=json&policy=geo',
     that = this;
   if (this.specifiedMetro !== undefined) {
     mlabNsUrl = mlabNsUrl + '&metro=' +  this.specifiedMetro;
@@ -287,7 +287,7 @@ InternetHealthTest.prototype.findLocalServers = function (allServers) {
 
 InternetHealthTest.prototype.findAllServers = function () {
   var mlabNsRequest = new XMLHttpRequest(),
-    mlabNsUrl = 'http://mlab-ns.appspot.com/ndt?format=json&policy=all',
+    mlabNsUrl = 'https://mlab-ns.appspot.com/ndt?format=json&policy=all',
     that = this;
 
   mlabNsRequest.onreadystatechange = function () {
@@ -482,7 +482,7 @@ InternetHealthTest.prototype.onfinish = function (passedResults) {
   } else {
     this.shareableResults = this.packageShareableResults(this.resultList);
     shareableInformation = this.processShareableResults(this.shareableResults);
-    shareableInformation.link = 'http://www.internethealthtest.org/?t=' + this.encodeShareableResults(this.shareableResults);
+    shareableInformation.link = 'https://www.internethealthtest.org/?t=' + this.encodeShareableResults(this.shareableResults);
     this.notifyShareableResults(shareableInformation, false);
     this.notifyServerQueueCompletion(shareableInformation);
     this.isRunning = false;
@@ -512,7 +512,7 @@ InternetHealthTest.prototype.onerror = function (passedError) {
   } else {
     this.shareableResults = this.packageShareableResults(this.resultList);
     shareableInformation = this.processShareableResults(this.shareableResults);
-    shareableInformation.link = 'http://www.internethealthtest.org/?t=' + this.encodeShareableResults(this.shareableResults);
+    shareableInformation.link = 'https://www.internethealthtest.org/?t=' + this.encodeShareableResults(this.shareableResults);
     this.notifyShareableResults(shareableInformation, false);
     this.notifyServerQueueCompletion(shareableInformation);
     this.isRunning = false;
